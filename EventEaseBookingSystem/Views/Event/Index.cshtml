@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Event>
+
+@{
+    ViewData["Title"] = "Events";
+}
+
+<h2 class="text-success">Events</h2>
+
+<p>
+    <a asp-action="Create" class="btn" style="background-color: #90ee90; color: black;">
+        <i class="fas fa-plus-circle"></i> Add New Event
+    </a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-success">
+        <tr>
+            <th>Event Name</th>
+            <th>Event Date</th>
+            <th>Venue</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EventName</td>
+                <td>@item.EventDate.ToShortDateString()</td>
+                <td>@item.Venue?.VenueName</td>
+                <td>
+                    <a class="btn btn-sm btn-info me-1" asp-action="Details" asp-route-id="@item.EventId">
+                        <i class="fas fa-file-alt"></i>
+                    </a>
+                    <a class="btn btn-sm btn-warning me-1" asp-action="Edit" asp-route-id="@item.EventId">
+                        <i class="fas fa-pen"></i>
+                    </a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.EventId">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Booking>
+
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<h2 class="text-success">Bookings</h2>
+
+<p>
+    <a asp-action="Create" class="btn" style="background-color: #90ee90; color: black;">
+        <i class="fas fa-plus-circle"></i> Add New Booking
+    </a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-success">
+        <tr>
+            <th>Event</th>
+            <th>Venue</th>
+            <th>Booking Date</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Event.EventName</td>
+                <td>@item.Venue.VenueName</td>
+                <td>@item.BookingDate.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BookingId" class="btn btn-warning me-1">
+                        <i class="fas fa-pen"></i>
+                    </a>
+                    <a asp-action="Details" asp-route-id="@item.BookingId" class="btn btn-info me-1">
+                        <i class="fas fa-file-alt"></i>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item.BookingId" class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

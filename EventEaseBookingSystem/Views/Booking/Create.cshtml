@@ -1,0 +1,33 @@
+﻿@model Booking
+
+@{
+    ViewData["Title"] = "Create Booking";
+}
+
+<h2 class="text-success">Create Booking</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="EventId" class="control-label"></label>
+        <select asp-for="EventId" class="form-control" asp-items="ViewBag.EventId"></select>
+        <span asp-validation-for="EventId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="VenueId">Venue</label>
+        <select asp-for="VenueId" class="form-control" asp-items="ViewBag.VenueId"></select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BookingDate"></label>
+        <input asp-for="BookingDate" class="form-control" type="date" />
+    </div>
+
+    <button type="submit" class="btn" style="background-color: #90ee90; color: black;">
+        <i class="fas fa-plus-circle"></i> Create Booking
+    </button>
+
+    <a asp-action="Index" class="btn btn-dark ms-2">
+        <i class="fas fa-arrow-left"></i> Back to List
+    </a>
+</form>
