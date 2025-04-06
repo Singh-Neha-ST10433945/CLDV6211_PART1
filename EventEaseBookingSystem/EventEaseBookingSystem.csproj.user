@@ -12,5 +12,6 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>AppDbContext</WebStackScaffolding_DbContextTypeFullName>
+    <NameOfLastUsedPublishProfile>C:\Users\lab_services_student\Desktop\CLDV6211_PART1\EventEaseBookingSystem\Properties\PublishProfiles\EventEaseBookingSystem - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
